@@ -1,0 +1,10 @@
+.DS_Store
+*.swp
+project.xcworkspace
+xcuserdata
+DerivedData
+*.xcuserstate
+/include
+/lib
+build/
+GoldenGateLib_*zip
