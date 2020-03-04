@@ -1,0 +1,6 @@
+framework module Pods_OscarSample {
+  umbrella header "Pods-OscarSample-umbrella.h"
+
+  export *
+  module * { export * }
+}
