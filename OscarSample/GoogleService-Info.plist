@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>604196931292-01mre5s2v5hguota05uo6o682cf63h80.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.604196931292-01mre5s2v5hguota05uo6o682cf63h80</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBUa-kY_N6tkNj-2HvXdFsYEoX198fvZXs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>604196931292</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.yettiesoft.OscarSample</string>
+	<key>PROJECT_ID</key>
+	<string>oscar-334ce</string>
+	<key>STORAGE_BUCKET</key>
+	<string>oscar-334ce.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:604196931292:ios:bded59742b142939a61619</string>
+	<key>DATABASE_URL</key>
+	<string>https://oscar-334ce.firebaseio.com</string>
+</dict>
+</plist>
