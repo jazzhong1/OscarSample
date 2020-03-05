@@ -78,6 +78,7 @@
 }
 
 //푸시 데이터가 들어노느 함수
+#pragma mark - Data in PushData function
 -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     NSLog(@"Remote notification : %@", userInfo);
     if([self.viewController respondsToSelector:@selector(setSendData:)]){
