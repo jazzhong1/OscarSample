@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "APNSDelegate.h"
+#import "FCMDelegate.h"
 
 int main(int argc, char * argv[]) {
     NSString * appDelegateClassName;
     @autoreleasepool {
         // Setup code that might create autoreleased objects goes here.
-        appDelegateClassName = NSStringFromClass([APNSDelegate class]);
+        appDelegateClassName = NSStringFromClass([FCMDelegate class]);
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }
