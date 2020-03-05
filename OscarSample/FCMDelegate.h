@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UserNotifications/UserNotifications.h> //Notification 사용을 위해 헤더 import
 
-@interface FCMDelegate : UIResponder <UIApplicationDelegate>
+@interface FCMDelegate : UIResponder <UIApplicationDelegate,UNUserNotificationCenterDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UIViewController *viewController; //storyBoard 사용하기위해 객체 추가
