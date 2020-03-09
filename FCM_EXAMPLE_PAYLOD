@@ -1,0 +1,18 @@
+Content-Type: application/json
+Authorization: key=AAAAaQo_GAw:APA91bGJhM5erkUEe8Kw-ESNnAbCvWOJpaWf3LDYDEt_l_b-DRcisbdTSGvHNtbMZtYpoXJMNS8Pa8Wa__BiZ9kkQK7UArciKUQslxTI5JwN7kbe81bpVWGeD3hhlXoEGUxFVrxGUZZv
+Host: fcm.googleapis.com
+
+{
+   "to": "cBirQUaRvUz6uypkjNveu-:APA91bHpCwSW3C5qyKhltwZLMRRCL1qw8B16gIrJicDBNfWugUNOy_N_GTsCdjrn2A40UyCjs7n0ifCphZQ40BE-A67xk2QYHPk__AgtmuoAMKsszlWJXwvGaSD8qzj_mU1biX6A7jmW",
+   "content_available": true,
+   "mutable_content": true,
+   "data":
+   {
+      "message": "Offer!",
+   },
+   "notification":
+   {
+      "body": "Enter your message",
+      "sound": "default"
+   }
+}
