@@ -43,16 +43,18 @@
         }
         else{
             self->dict = value;
-            [self->oscarHandler reg_auth:self->dict callback:^(NSError *error, NSMutableDictionary *value,BOOL result){
-                NSString *url =@"http://172.16.10.14/oscar/reg_auth.jsp";
-                url = [url stringByAppendingString:@"?authcode="];
-                url = [url stringByAppendingString:[self->dict objectForKey:@"code"]];
-                url = [url stringByAppendingString:@"&appid="];
-                url = [url stringByAppendingString:[self->dict objectForKey:@"appid"]];
-                url = [url stringByAppendingString:@"&pushtype=fcm"];
-                url = [url stringByAppendingString:@"&tokenid="];
-                url = [url stringByAppendingString:[self->dict objectForKey:@"tokenid"]];
-                url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+            NSString *url =@"http://172.16.10.14/oscar/reg_auth.jsp";
+            url = [url stringByAppendingString:@"?authcode="];
+            url = [url stringByAppendingString:[self->dict objectForKey:@"code"]];
+            url = [url stringByAppendingString:@"&appid="];
+            url = [url stringByAppendingString:[self->dict objectForKey:@"appid"]];
+            url = [url stringByAppendingString:@"&pushtype=fcm"];
+            url = [url stringByAppendingString:@"&tokenid="];
+            url = [url stringByAppendingString:[self->dict objectForKey:@"tokenid"]];
+            url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+            
+            [self->oscarHandler reg_auth:url callback:^(NSError *error, NSMutableDictionary *value,BOOL result){
+                
                 //network쏘기
                     if(!result){
                         onError([error code],[error userInfo]);

@@ -14,7 +14,7 @@
     
 }
 
--(void)reg_auth:(NSMutableDictionary *)value callback:(id)oscarCallback{
+-(void)reg_auth:(NSString *)value callback:(id)oscarCallback{
     
 }
 @end

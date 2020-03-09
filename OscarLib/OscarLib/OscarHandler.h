@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)initialize:(NSMutableDictionary *)value callback:ggCallback;
-- (void)reg_auth : (NSMutableDictionary *)value callback:oscarCallback;
+- (void)reg_auth : (NSString *)url callback:oscarCallback;
 
 @end
 
