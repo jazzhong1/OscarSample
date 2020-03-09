@@ -19,17 +19,17 @@
 	<key>STORAGE_BUCKET</key>
 	<string>oscarsample-ios.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:451143473164:ios:5e3e325af94f7c054ab629</string>
+	<string>1:451143473164:ios:a85f6192220019f04ab629</string>
 	<key>DATABASE_URL</key>
 	<string>https://oscarsample-ios.firebaseio.com</string>
 </dict>

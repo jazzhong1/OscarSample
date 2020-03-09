@@ -7,7 +7,7 @@
 //
 
 #import "APNSDelegate.h"
-#import "Firebase.h"
+
 
 #define isOSVersionOver10 ([[[[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."] objectAtIndex:0] integerValue] >= 10) // iOS 버전별로 구현하는 방법이 조금 다르기 때문에 mecro 사용
 
@@ -23,7 +23,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [FIRApp configure];
     ///스토리보드 관련  소스
     [self pasteConfiguration];
     [self initializeRemoteNotification];
@@ -122,6 +121,7 @@
 
     return [token copy];
 }
+
 
 
 #pragma mark - UISceneSession lifecycle

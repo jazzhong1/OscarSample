@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A7305910F145872D32CD20D /* Pods_OscarSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF341AA33535677BDA23B382 /* Pods_OscarSample.framework */; };
 		64320CE123FCF9A200F19A9C /* APNSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64320CE023FCF9A200F19A9C /* APNSDelegate.m */; };
 		64320CE423FCF9A200F19A9C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64320CE323FCF9A200F19A9C /* SceneDelegate.m */; };
 		64320CE723FCF9A200F19A9C /* OscarMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64320CE623FCF9A200F19A9C /* OscarMainController.m */; };
@@ -15,14 +14,16 @@
 		64320CEF23FCF9A200F19A9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64320CED23FCF9A200F19A9C /* LaunchScreen.storyboard */; };
 		64320CF223FCF9A200F19A9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64320CF123FCF9A200F19A9C /* main.m */; };
 		64596C2E23FCFF3700237F49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64596C2D23FCFF3700237F49 /* Assets.xcassets */; };
-		64596C3523FD140B00237F49 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64596C3223FD140B00237F49 /* UserNotificationsUI.framework */; };
-		64596C3623FD140B00237F49 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64596C3323FD140B00237F49 /* NotificationCenter.framework */; };
-		64596C3723FD140B00237F49 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64596C3423FD140B00237F49 /* UserNotifications.framework */; };
 		645EECAD240F892000205F38 /* FCMDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EECAC240F892000205F38 /* FCMDelegate.m */; };
 		645EECAF2410DE7200205F38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 645EECAE2410DE7200205F38 /* GoogleService-Info.plist */; };
+		645EECBA24120FCD00205F38 /* oscarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 645EECB724120FCC00205F38 /* oscarIcon.png */; };
+		645EECBB24120FCD00205F38 /* pushIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 645EECB824120FCC00205F38 /* pushIcon.png */; };
+		645EECBC24120FCD00205F38 /* qrIcom.png in Resources */ = {isa = PBXBuildFile; fileRef = 645EECB924120FCD00205F38 /* qrIcom.png */; };
+		7816EBDF54782AA382362ACB /* Pods_OscarSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B31DB01C2EED80389909E39 /* Pods_OscarSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B31DB01C2EED80389909E39 /* Pods_OscarSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OscarSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64320CDC23FCF9A200F19A9C /* OscarSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OscarSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64320CDF23FCF9A200F19A9C /* APNSDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APNSDelegate.h; sourceTree = "<group>"; };
 		64320CE023FCF9A200F19A9C /* APNSDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APNSDelegate.m; sourceTree = "<group>"; };
@@ -35,16 +36,15 @@
 		64320CF023FCF9A200F19A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64320CF123FCF9A200F19A9C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		64596C2D23FCFF3700237F49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		64596C3223FD140B00237F49 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
-		64596C3323FD140B00237F49 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		64596C3423FD140B00237F49 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		64596C3823FD168300237F49 /* OscarSample.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = OscarSample.entitlements; sourceTree = "<group>"; };
 		645EECAB240F892000205F38 /* FCMDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCMDelegate.h; sourceTree = "<group>"; };
 		645EECAC240F892000205F38 /* FCMDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCMDelegate.m; sourceTree = "<group>"; };
 		645EECAE2410DE7200205F38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		645EECB724120FCC00205F38 /* oscarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oscarIcon.png; sourceTree = "<group>"; };
+		645EECB824120FCC00205F38 /* pushIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushIcon.png; sourceTree = "<group>"; };
+		645EECB924120FCD00205F38 /* qrIcom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrIcom.png; sourceTree = "<group>"; };
 		82F21E9EA093D9E48B8ACDA6 /* Pods-OscarSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OscarSample.debug.xcconfig"; path = "Target Support Files/Pods-OscarSample/Pods-OscarSample.debug.xcconfig"; sourceTree = "<group>"; };
 		B891E71D6D7455D63B664E0E /* Pods-OscarSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OscarSample.release.xcconfig"; path = "Target Support Files/Pods-OscarSample/Pods-OscarSample.release.xcconfig"; sourceTree = "<group>"; };
-		FF341AA33535677BDA23B382 /* Pods_OscarSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OscarSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64596C3623FD140B00237F49 /* NotificationCenter.framework in Frameworks */,
-				64596C3523FD140B00237F49 /* UserNotificationsUI.framework in Frameworks */,
-				64596C3723FD140B00237F49 /* UserNotifications.framework in Frameworks */,
-				3A7305910F145872D32CD20D /* Pods_OscarSample.framework in Frameworks */,
+				7816EBDF54782AA382362ACB /* Pods_OscarSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +90,9 @@
 				64320CE623FCF9A200F19A9C /* OscarMainController.m */,
 				64320CE823FCF9A200F19A9C /* Main.storyboard */,
 				64320CED23FCF9A200F19A9C /* LaunchScreen.storyboard */,
+				645EECB724120FCC00205F38 /* oscarIcon.png */,
+				645EECB824120FCC00205F38 /* pushIcon.png */,
+				645EECB924120FCD00205F38 /* qrIcom.png */,
 				64596C2D23FCFF3700237F49 /* Assets.xcassets */,
 				64320CF023FCF9A200F19A9C /* Info.plist */,
 				64596C3823FD168300237F49 /* OscarSample.entitlements */,
@@ -105,10 +105,7 @@
 		64596C3123FD140B00237F49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				64596C3323FD140B00237F49 /* NotificationCenter.framework */,
-				64596C3423FD140B00237F49 /* UserNotifications.framework */,
-				64596C3223FD140B00237F49 /* UserNotificationsUI.framework */,
-				FF341AA33535677BDA23B382 /* Pods_OscarSample.framework */,
+				0B31DB01C2EED80389909E39 /* Pods_OscarSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,7 +178,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				645EECBA24120FCD00205F38 /* oscarIcon.png in Resources */,
 				64320CEF23FCF9A200F19A9C /* LaunchScreen.storyboard in Resources */,
+				645EECBB24120FCD00205F38 /* pushIcon.png in Resources */,
+				645EECBC24120FCD00205F38 /* qrIcom.png in Resources */,
 				645EECAF2410DE7200205F38 /* GoogleService-Info.plist in Resources */,
 				64596C2E23FCFF3700237F49 /* Assets.xcassets in Resources */,
 				64320CEA23FCF9A200F19A9C /* Main.storyboard in Resources */,
