@@ -31,7 +31,15 @@
 - (void)tapped:(UITapGestureRecognizer*)tap
 {
     NSLog(@"%@", tap.view);
+    NSString *data = @"http://172.16.10.14/oscar/newApp.jsp";
+    //callback 함수로 받기
+    
     [self fireLocalNotification];
+}
+
+-(void) makeRequest:(NSData *)jsonBodyData withURL:(NSString *)url{
+    NSURL *servletURL = [[NSURL alloc]initWithString:url];
+    
 }
 
 

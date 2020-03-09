@@ -11,5 +11,12 @@
 @interface OscarMainController : UIViewController
 
 @property (strong, nonatomic) IBOutlet NSDictionary *sendData; //delegate에서 전달받을 URLScheme
+
+-(NSMutableURLRequest *) makeRequest:(NSData *)jsonBodyData withURL:(NSString *)url;
+- (void)sendServlet:(NSMutableURLRequest *)urlRequest
+           callback:(void (^)(NSError *, NSDictionary *, BOOL))oscarCallback;
+
+-(void)onLoad:(NSString * _Nonnull)ggValue callback:(void (^)(void))onSuccess
+     callback:(void (^)(NSInteger code,NSDictionary *info))onError;
 @end
 

@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		645EECCB2416256E00205F38 /* OscarLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EECCA2416256E00205F38 /* OscarLib.m */; };
+		645EECCC2416256E00205F38 /* OscarLib.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 645EECC92416256E00205F38 /* OscarLib.h */; };
+		645EECD42416274300205F38 /* OscarHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EECD32416274300205F38 /* OscarHandler.m */; };
+		645EECD72416274D00205F38 /* OscarNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EECD62416274D00205F38 /* OscarNetWork.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		645EECC42416256E00205F38 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				645EECCC2416256E00205F38 /* OscarLib.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		645EECC62416256E00205F38 /* libOscarLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOscarLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		645EECC92416256E00205F38 /* OscarLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscarLib.h; sourceTree = "<group>"; };
+		645EECCA2416256E00205F38 /* OscarLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OscarLib.m; sourceTree = "<group>"; };
+		645EECD22416274300205F38 /* OscarHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscarHandler.h; sourceTree = "<group>"; };
+		645EECD32416274300205F38 /* OscarHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OscarHandler.m; sourceTree = "<group>"; };
+		645EECD52416274D00205F38 /* OscarNetWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscarNetWork.h; sourceTree = "<group>"; };
+		645EECD62416274D00205F38 /* OscarNetWork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OscarNetWork.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		645EECC32416256E00205F38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		645EECBD2416256E00205F38 = {
+			isa = PBXGroup;
+			children = (
+				645EECC82416256E00205F38 /* OscarLib */,
+				645EECC72416256E00205F38 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		645EECC72416256E00205F38 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				645EECC62416256E00205F38 /* libOscarLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		645EECC82416256E00205F38 /* OscarLib */ = {
+			isa = PBXGroup;
+			children = (
+				645EECC92416256E00205F38 /* OscarLib.h */,
+				645EECCA2416256E00205F38 /* OscarLib.m */,
+				645EECD22416274300205F38 /* OscarHandler.h */,
+				645EECD32416274300205F38 /* OscarHandler.m */,
+				645EECD52416274D00205F38 /* OscarNetWork.h */,
+				645EECD62416274D00205F38 /* OscarNetWork.m */,
+			);
+			path = OscarLib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		645EECC52416256E00205F38 /* OscarLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 645EECCF2416256E00205F38 /* Build configuration list for PBXNativeTarget "OscarLib" */;
+			buildPhases = (
+				645EECC22416256E00205F38 /* Sources */,
+				645EECC32416256E00205F38 /* Frameworks */,
+				645EECC42416256E00205F38 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OscarLib;
+			productName = OscarLib;
+			productReference = 645EECC62416256E00205F38 /* libOscarLib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		645EECBE2416256E00205F38 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = yettie;
+				TargetAttributes = {
+					645EECC52416256E00205F38 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 645EECC12416256E00205F38 /* Build configuration list for PBXProject "OscarLib" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 645EECBD2416256E00205F38;
+			productRefGroup = 645EECC72416256E00205F38 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				645EECC52416256E00205F38 /* OscarLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		645EECC22416256E00205F38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				645EECCB2416256E00205F38 /* OscarLib.m in Sources */,
+				645EECD42416274300205F38 /* OscarHandler.m in Sources */,
+				645EECD72416274D00205F38 /* OscarNetWork.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		645EECCD2416256E00205F38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		645EECCE2416256E00205F38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		645EECD02416256E00205F38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Q7RNHANG9;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		645EECD12416256E00205F38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Q7RNHANG9;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		645EECC12416256E00205F38 /* Build configuration list for PBXProject "OscarLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				645EECCD2416256E00205F38 /* Debug */,
+				645EECCE2416256E00205F38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		645EECCF2416256E00205F38 /* Build configuration list for PBXNativeTarget "OscarLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				645EECD02416256E00205F38 /* Debug */,
+				645EECD12416256E00205F38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 645EECBE2416256E00205F38 /* Project object */;
+}
