@@ -27,7 +27,8 @@ NSString *const kGCMMessageIDKey = @"gcm.message_id";
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // [START configure_firebase]
+    
+    // [START configure_firebase]
   [FIRApp configure];
   // [END configure_firebase]
 
@@ -134,10 +135,18 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
   if (userInfo[kGCMMessageIDKey]) {
     NSLog(@"Message ID: %@", userInfo[kGCMMessageIDKey]);
   }
+  
+    
+  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+       
+    self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+       
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
 
-  // Print full message.
+  // Print full message.b
   NSLog(@"%@", userInfo);
-
+  //alert으로 띄우기
   completionHandler();
 }
 
@@ -145,6 +154,21 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 // [START refresh_token]
 - (void)messaging:(FIRMessaging *)messaging didReceiveRegistrationToken:(NSString *)fcmToken {
+    
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+       
+    self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
+       
+    self.window.rootViewController = self.viewController;
+    if([self.viewController respondsToSelector:@selector(setFcmToken:)]){
+        [self.viewController performSelector:@selector(setFcmToken:) withObject:fcmToken];
+    }
+    else{
+        NSLog(@"not matched");
+    }
+    
+    
     NSLog(@"FCM registration token: %@", fcmToken);
     // Notify about received token.
     NSDictionary *dataDict = [NSDictionary dictionaryWithObject:fcmToken forKey:@"token"];
@@ -177,4 +201,6 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
   // With swizzling disabled you must set the APNs device token here.
   // [FIRMessaging messaging].APNSToken = deviceToken;
 }
+
+
 @end

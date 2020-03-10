@@ -8,6 +8,7 @@
 
 #import "OscarMainController.h"
 #import "PushController.h"
+#import "OscarLib.h"
 
 @interface OscarMainController ()
 @property (weak, nonatomic) IBOutlet UIImageView *pushIcon;
@@ -32,25 +33,26 @@
 - (void)tapped:(UITapGestureRecognizer*)tap
 {
     NSLog(@"%@", tap.view);
-    NSString *data = @"http://172.16.10.14/oscar/newApp.jsp";
     //callback 함수로 받기
-    [self fireLocalNotification];
-}
-
--(void) makeRequest:(NSData *)jsonBodyData withURL:(NSString *)url{
-    NSURL *servletURL = [[NSURL alloc]initWithString:url];
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                         bundle:nil];
+    PushController *add =
+               [storyboard instantiateViewControllerWithIdentifier:@"pushController"];
+    [add setFcmToken:self.fcmToken];
+    [self presentViewController:add
+                       animated:YES 
+                     completion:nil];
     
 }
 
 
-// 알림 등록 메소드
 -(void)fireLocalNotification{
  
     // UILocalNotification 객체 생성
     UILocalNotification *noti = [[UILocalNotification alloc]init];
  
     // 알람 발생 시각 설정. 5초후로 설정. NSDate 타입.
-    noti.fireDate = [NSDate dateWithTimeIntervalSinceNow:2];
+    noti.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
  
     // timeZone 설정.
     noti.timeZone = [NSTimeZone systemTimeZone];

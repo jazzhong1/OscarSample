@@ -11,7 +11,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PushController : UIViewController
+@interface PushController : UIViewController<UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *number1;
+@property (weak, nonatomic) IBOutlet UITextField *number2;
+@property (weak, nonatomic) IBOutlet UITextField *number3;
+@property (weak, nonatomic) IBOutlet UITextField *number4;
+
+@property (strong, nonatomic) IBOutlet NSString *fcmToken;
+
 
 @end
 

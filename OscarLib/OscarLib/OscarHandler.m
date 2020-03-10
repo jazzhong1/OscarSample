@@ -23,7 +23,10 @@
     return self;
 }
 -(void)initialize:(NSString *)url callback:(id)oscarCallback{
-    url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+   url = [url stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+    
+    //url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSMutableURLRequest *request=[oscarNetWork makeRequest:url];
     [oscarNetWork sendServlet:request callback:oscarCallback];
 }

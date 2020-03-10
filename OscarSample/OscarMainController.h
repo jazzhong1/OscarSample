@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UserNotifications/UserNotifications.h> //Notification 사용을 위해 헤더 import
 
-@interface OscarMainController : UIViewController
+@interface OscarMainController : UIViewController<UNUserNotificationCenterDelegate>
 
-@property (strong, nonatomic) IBOutlet NSDictionary *sendData; //delegate에서 전달받을 URLScheme
+@property (strong, nonatomic) IBOutlet NSDictionary *sendData; //delegate에서 전달받을 URLSchemefcmToken
+@property (strong, nonatomic) IBOutlet NSString *fcmToken;
 
 -(NSMutableURLRequest *) makeRequest:(NSData *)jsonBodyData withURL:(NSString *)url;
 - (void)sendServlet:(NSMutableURLRequest *)urlRequest
@@ -18,5 +20,6 @@
 
 -(void)onLoad:(NSString * _Nonnull)ggValue callback:(void (^)(void))onSuccess
      callback:(void (^)(NSInteger code,NSDictionary *info))onError;
+-(void)fireLocalNotification;
 @end
 

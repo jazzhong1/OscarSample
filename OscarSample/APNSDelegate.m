@@ -80,6 +80,13 @@
 #pragma mark - Data in PushData function
 -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     NSLog(@"Remote notification : %@", userInfo);
+    
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+       
+       UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+       
+       self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginConroller"];
+           
     if([self.viewController respondsToSelector:@selector(setSendData:)]){
         [self.viewController performSelector:@selector(setSendData:) withObject:userInfo];
         [self.viewController viewDidLoad];
