@@ -38,6 +38,7 @@
                                                          bundle:nil];
     PushController *add =
                [storyboard instantiateViewControllerWithIdentifier:@"pushController"];
+
     [add setFcmToken:self.fcmToken];
     [self presentViewController:add
                        animated:YES 

@@ -155,18 +155,16 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 // [START refresh_token]
 - (void)messaging:(FIRMessaging *)messaging didReceiveRegistrationToken:(NSString *)fcmToken {
     
-    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-       
-    self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
-       
-    self.window.rootViewController = self.viewController;
-    if([self.viewController respondsToSelector:@selector(setFcmToken:)]){
-        [self.viewController performSelector:@selector(setFcmToken:) withObject:fcmToken];
-    }
-    else{
-        NSLog(@"not matched");
-    }
+      self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
+            
+     if([self.viewController respondsToSelector:@selector(setFcmToken:)]){
+         [self.viewController performSelector:@selector(setFcmToken:) withObject:fcmToken];
+         [self.viewController viewDidLoad];
+     }
     
     
     NSLog(@"FCM registration token: %@", fcmToken);
