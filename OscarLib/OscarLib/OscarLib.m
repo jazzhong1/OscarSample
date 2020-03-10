@@ -31,10 +31,10 @@
     return self;
 }
 
-- (void)testRun:(NSDictionary *)value callback:(void (^)(void))onSuccess callback:(void (^)(NSInteger, NSDictionary *))onError{
-    [oscarHandler initialize:nil callback:^(NSError *error, NSMutableDictionary *value,BOOL result){
-         NSString *url =@"http://172.16.10.14/oscar/newApp.jsp";
-        url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+- (void)testRun:(NSString *)value callback:(void (^)(void))onSuccess callback:(void (^)(NSInteger, NSDictionary *))onError{
+    NSString *url =@"http://172.16.10.14/oscar/reg_auth.jsp";
+
+    [oscarHandler initialize:url callback:^(NSError *error, NSMutableDictionary *oscarValue,BOOL result){
         //netWork쏘기...콜백 받고
         NSLog(@"value %@",value);
         if(!result){
@@ -42,19 +42,8 @@
             return;
         }
         else{
-            self->dict = value;
             NSString *url =@"http://172.16.10.14/oscar/reg_auth.jsp";
-            url = [url stringByAppendingString:@"?authcode="];
-            url = [url stringByAppendingString:[self->dict objectForKey:@"code"]];
-            url = [url stringByAppendingString:@"&appid="];
-            url = [url stringByAppendingString:[self->dict objectForKey:@"appid"]];
-            url = [url stringByAppendingString:@"&pushtype=fcm"];
-            url = [url stringByAppendingString:@"&tokenid="];
-            url = [url stringByAppendingString:[self->dict objectForKey:@"tokenid"]];
-            url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-            
-            [self->oscarHandler reg_auth:url callback:^(NSError *error, NSMutableDictionary *value,BOOL result){
-                
+            [self->oscarHandler reg_auth:url withValue:value withDict:oscarValue callback:^(NSError *error, NSMutableDictionary *value,BOOL result){
                 //network쏘기
                     if(!result){
                         onError([error code],[error userInfo]);
@@ -66,7 +55,6 @@
             }];
             self->onsuccess();
         }
-        
     }];
     
 

@@ -7,14 +7,37 @@
 //
 
 #import "OscarHandler.h"
+#import "OscarNetWork.h"
 
-@implementation OscarHandler
-
--(void)initialize:(NSMutableDictionary *)value callback:(id)ggCallback{
+@implementation OscarHandler{
+    OscarNetWork *oscarNetWork;
     
 }
+ 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        oscarNetWork = [[OscarNetWork alloc]init];
+    }
+    return self;
+}
+-(void)initialize:(NSString *)url callback:(id)oscarCallback{
+    url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSMutableURLRequest *request=[oscarNetWork makeRequest:url];
+    [oscarNetWork sendServlet:request callback:oscarCallback];
+}
 
--(void)reg_auth:(NSString *)value callback:(id)oscarCallback{
-    
+- (void)reg_auth : (NSString *)url  withValue:(NSString *)value withDict:(NSDictionary *)dict callback:oscarCallback{
+    url = [url stringByAppendingString:@"?authcode="];
+    url = [url stringByAppendingString:value];
+    url = [url stringByAppendingString:@"&appid="];
+    url = [url stringByAppendingString:[dict objectForKey:@"appid"]];
+    url = [url stringByAppendingString:@"&pushtype=fcm"];
+    url = [url stringByAppendingString:@"&tokenid="];
+    url = [url stringByAppendingString:[dict objectForKey:@"tokenid"]];
+    url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSMutableURLRequest *request=[oscarNetWork makeRequest:url];
+    [oscarNetWork sendServlet:request callback:oscarCallback];
 }
 @end

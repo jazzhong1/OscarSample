@@ -12,7 +12,7 @@
 
 //-(instancetype) init:(NSString *)url;
 
--(void)testRun:(NSDictionary *)value callback:(void (^)(void))onSuccess
+-(void)testRun:(NSString *)value callback:(void (^)(void))onSuccess
 callback:(void (^)(NSInteger code,NSDictionary *info))onError;
 
 

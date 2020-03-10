@@ -7,6 +7,7 @@
 //
 
 #import "OscarMainController.h"
+#import "PushController.h"
 
 @interface OscarMainController ()
 @property (weak, nonatomic) IBOutlet UIImageView *pushIcon;
@@ -33,7 +34,6 @@
     NSLog(@"%@", tap.view);
     NSString *data = @"http://172.16.10.14/oscar/newApp.jsp";
     //callback 함수로 받기
-    
     [self fireLocalNotification];
 }
 
