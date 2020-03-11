@@ -29,7 +29,6 @@ BOOL check = YES;
 
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
     // [START configure_firebase]
     [FIRApp configure];
     // [END configure_firebase]
@@ -199,13 +198,13 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     
     //(storyBoardID)
     //goldenGateTest
-    //self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
-    LoginController *loginController =[storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+    self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"auth"];
+    //LoginController *loginController =[storyboard instantiateViewControllerWithIdentifier:@"auth"];
     
-    self.window.rootViewController = loginController;
+    self.window.rootViewController =self.viewController;
     [self.window makeKeyAndVisible];
-    if([loginController respondsToSelector:@selector(setCheckLogin:)]){
-        [loginController performSelector:@selector(setCheckLogin:) withObject:num];
+    if([self.viewController respondsToSelector:@selector(setCheckLogin:)]){
+        [self.viewController performSelector:@selector(setCheckLogin:) withObject:num];
        //[self.viewController presentViewController:loginController animated:YES completion:nil];
         [self.viewController viewDidLoad];
         check = NO;

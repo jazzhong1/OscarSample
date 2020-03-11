@@ -26,6 +26,8 @@
 		645EECE12417674600205F38 /* libOscarLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 645EECE02417674600205F38 /* libOscarLib.a */; };
 		645EECE5241773E000205F38 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EECE4241773E000205F38 /* LoginController.m */; };
 		645EECE824177A6600205F38 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 645EECE724177A6600205F38 /* LocalAuthentication.framework */; };
+		6466C2852418D2B900A4A89A /* AuntenticateController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6466C2832418D2B900A4A89A /* AuntenticateController.h */; };
+		6466C2862418D2B900A4A89A /* AuntenticateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6466C2842418D2B900A4A89A /* AuntenticateController.m */; };
 		7816EBDF54782AA382362ACB /* Pods_OscarSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B31DB01C2EED80389909E39 /* Pods_OscarSample.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		645EECE3241773E000205F38 /* LoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		645EECE4241773E000205F38 /* LoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		645EECE724177A6600205F38 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		6466C2832418D2B900A4A89A /* AuntenticateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuntenticateController.h; sourceTree = "<group>"; };
+		6466C2842418D2B900A4A89A /* AuntenticateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuntenticateController.m; sourceTree = "<group>"; };
 		82F21E9EA093D9E48B8ACDA6 /* Pods-OscarSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OscarSample.debug.xcconfig"; path = "Target Support Files/Pods-OscarSample/Pods-OscarSample.debug.xcconfig"; sourceTree = "<group>"; };
 		B891E71D6D7455D63B664E0E /* Pods-OscarSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OscarSample.release.xcconfig"; path = "Target Support Files/Pods-OscarSample/Pods-OscarSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +127,8 @@
 				64596C3823FD168300237F49 /* OscarSample.entitlements */,
 				645EECAE2410DE7200205F38 /* GoogleService-Info.plist */,
 				64320CF123FCF9A200F19A9C /* main.m */,
+				6466C2832418D2B900A4A89A /* AuntenticateController.h */,
+				6466C2842418D2B900A4A89A /* AuntenticateController.m */,
 			);
 			path = OscarSample;
 			sourceTree = "<group>";
@@ -154,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				641C1A4E2417C49C00234C7F /* OscarLib.h in Headers */,
+				6466C2852418D2B900A4A89A /* AuntenticateController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +289,7 @@
 				64320CE723FCF9A200F19A9C /* OscarMainController.m in Sources */,
 				645EECDA2417340C00205F38 /* PushController.m in Sources */,
 				64320CE123FCF9A200F19A9C /* APNSDelegate.m in Sources */,
+				6466C2862418D2B900A4A89A /* AuntenticateController.m in Sources */,
 				64320CF223FCF9A200F19A9C /* main.m in Sources */,
 				645EECAD240F892000205F38 /* FCMDelegate.m in Sources */,
 				64320CE423FCF9A200F19A9C /* SceneDelegate.m in Sources */,
