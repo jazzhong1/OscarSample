@@ -19,11 +19,11 @@
                                     servletURL.host,NSHTTPCookieDomain,
                                     servletURL.path,NSHTTPCookiePath,
                                     nil];
-     
+    
     NSHTTPCookie *cookie=[NSHTTPCookie cookieWithProperties:cookieProperties];
     NSArray* cookieArray=[NSArray arrayWithObjects:cookie,nil];
     NSDictionary *header=[NSHTTPCookie requestHeaderFieldsWithCookies:cookieArray];
- 
+    
     [request setHTTPMethod:@"GET"];
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
@@ -40,32 +40,32 @@
                                               completionHandler:^(NSData *data,
                                                                   NSURLResponse *response,
                                                                   NSError *error){
-    NSDictionary *responseDictonary=nil;
-    NSError *ggError=nil;
-    NSData *ggValue=nil;
-    BOOL callbackResult=NO;
-                                                  
-                                                  
-    NSHTTPURLResponse *httpResponse=(NSHTTPURLResponse *)response;
-    if(httpResponse.statusCode==200){
-                                                      
-    responseDictonary=[NSJSONSerialization JSONObjectWithData:data
-                                                      options:0
-                                                        error:&ggError];
-        NSLog(@"responseDictonary %@",responseDictonary);
-    }
-    else if(httpResponse.statusCode == 401){
-        // origin not matched
-        NSLog(@"error %@",error);
-
-    }
-    else{
-        ///...안 맞았을때...
-        NSLog(@"error %@",error);
-    }
-                                                  
-    oscarCallback(error,responseDictonary,error!=nil?callbackResult:true);
-    return ;
+        NSDictionary *responseDictonary=nil;
+        NSError *ggError=nil;
+        NSData *ggValue=nil;
+        BOOL callbackResult=NO;
+        
+        
+        NSHTTPURLResponse *httpResponse=(NSHTTPURLResponse *)response;
+        if(httpResponse.statusCode==200){
+            
+            responseDictonary=[NSJSONSerialization JSONObjectWithData:data
+                                                              options:0
+                                                                error:&ggError];
+            NSLog(@"responseDictonary %@",responseDictonary);
+        }
+        else if(httpResponse.statusCode == 401){
+            // origin not matched
+            NSLog(@"error %@",error);
+            
+        }
+        else{
+            ///...안 맞았을때...
+            NSLog(@"error %@",error);
+        }
+        
+        oscarCallback(error,responseDictonary,error!=nil?callbackResult:true);
+        return ;
     }];
     
     [dataTask resume];

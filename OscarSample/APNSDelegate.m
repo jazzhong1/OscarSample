@@ -26,14 +26,14 @@
     ///스토리보드 관련  소스
     [self pasteConfiguration];
     [self initializeRemoteNotification];
-     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-     
-     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-     
-     self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
-     
-     self.window.rootViewController = self.viewController;
-     [self.window makeKeyAndVisible];
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"mainController"];
+    
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -82,16 +82,16 @@
     NSLog(@"Remote notification : %@", userInfo);
     
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-       
-       UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-       
-       self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginConroller"];
-           
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginConroller"];
+    
     if([self.viewController respondsToSelector:@selector(setSendData:)]){
         [self.viewController performSelector:@selector(setSendData:) withObject:userInfo];
         [self.viewController viewDidLoad];
     }
-        
+    
 }
 
 // 푸시 서비스 등록 실패시 호출되는 함수
@@ -107,7 +107,7 @@
     if([self.viewController respondsToSelector:@selector(setSendData:)]){
         [self.viewController performSelector:@selector(setSendData:) withObject:notification.request.content.userInfo];
         [self.viewController viewDidLoad];
-      }
+    }
     completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound);
 }
 
@@ -121,11 +121,11 @@
 - (NSString *)stringWithDeviceToken:(NSData *)deviceToken {
     const char *data = [deviceToken bytes];
     NSMutableString *token = [NSMutableString string];
-
+    
     for (NSUInteger i = 0; i < [deviceToken length]; i++) {
         [token appendFormat:@"%02.2hhX", data[i]];
     }
-
+    
     return [token copy];
 }
 

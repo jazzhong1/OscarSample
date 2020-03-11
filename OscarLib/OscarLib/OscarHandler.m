@@ -13,7 +13,7 @@
     OscarNetWork *oscarNetWork;
     
 }
- 
+
 - (instancetype)init
 {
     self = [super init];
@@ -23,8 +23,8 @@
     return self;
 }
 -(void)initialize:(NSString *)url callback:(id)oscarCallback{
-   url = [url stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-
+    url = [url stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
     
     //url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSMutableURLRequest *request=[oscarNetWork makeRequest:url];

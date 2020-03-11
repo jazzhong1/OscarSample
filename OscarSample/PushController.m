@@ -20,11 +20,11 @@
     self.number4.delegate = self;
     oscar = [[OscarLib alloc]init];
     [oscar appConnect:nil callback:^(void){ //successCallback
-                 NSLog(@"success");
-             }
+        NSLog(@"success");
+    }
              callback:^(NSInteger code,NSDictionary *info){ //errorCallback
-                 NSLog(@"Error :: %ld = %@",(long)code,info);
-             }];
+        NSLog(@"Error :: %ld = %@",(long)code,info);
+    }];
     [super viewDidLoad];
 }
 - (IBAction)submitBtn:(id)sender {
@@ -32,23 +32,25 @@
     value = [value stringByAppendingString:[_number2 text]];
     value = [value stringByAppendingString:[_number3 text]];
     value = [value stringByAppendingString:[_number4 text]];
-   
+    
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
-                                                                  bundle:nil];
-    [oscar testRun:value withToken:self.fcmToken callback:^(void){ //successCallback
+                                                         bundle:nil];
+    
+    NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:@"fcmToken"];
+    [oscar testRun:value withToken:token callback:^(void){ //successCallback
         NSLog(@"success");
-       
-        LoginController *add = [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
-           [self presentViewController:add
-                              animated:YES
-                            completion:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            LoginController *add = [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+            [self presentViewController:add
+                               animated:YES
+                             completion:nil];
+        });
+        
+        
     }
-    callback:^(NSInteger code,NSDictionary *info){ //errorCallback
+          callback:^(NSInteger code,NSDictionary *info){ //errorCallback
         NSLog(@"Error :: %ld = %@",(long)code,info);
-        LoginController *add = [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
-                         [self presentViewController:add
-                                            animated:YES
-                                          completion:nil];
+        
     }];
     NSLog(@"value %@",value);
     

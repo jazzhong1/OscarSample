@@ -33,34 +33,36 @@
 
 - (void)appConnect:(NSString *)value callback:(void (^)(void))onSuccess callback:(void (^)(NSInteger, NSDictionary *))onError{
     NSString *url =@"http://172.16.10.14/oscar/newApp.jsp";
-
-       [oscarHandler initialize:url callback:^(NSError *error, NSMutableDictionary *oscarValue,BOOL result){
-           //netWork쏘기...콜백 받고
-           NSLog(@"value %@",value);
-           if(!result){
-               onError([error code],[error userInfo]);
-               return;
-           }
-           else{
-               self->dict = oscarValue;
-           }
-       }];
-       
+    
+    [oscarHandler initialize:url callback:^(NSError *error, NSMutableDictionary *oscarValue,BOOL result){
+        //netWork쏘기...콜백 받고
+        NSLog(@"value %@",value);
+        if(!result){
+            onError([error code],[error userInfo]);
+            return;
+        }
+        else{
+            self->dict = [[NSMutableDictionary alloc]initWithDictionary:oscarValue];
+            onSuccess();
+        }
+    }];
+    
     
 }
 - (void)testRun:(NSString *)value withToken:(NSString *)token  callback:(void (^)(void))onSuccess callback:(void (^)(NSInteger, NSDictionary *))onError{
     NSString *url =@"http://172.16.10.14/oscar/reg_auth.jsp";
-    [dict setObject:token forKey:@"tokenid"];
-              [self->oscarHandler reg_auth:url withValue:value withDict:dict callback:^(NSError *error, NSMutableDictionary *value,BOOL result){
-                  //network쏘기
-                      if(!result){
-                          onError([error code],[error userInfo]);
-                          return;
-                      }
-                      else{
-                          self->onsuccess();
-                      }
-              }];
+    [dict setValue:token forKey:@"tokenid"];
+    
+    [self->oscarHandler reg_auth:url withValue:value withDict:dict callback:^(NSError *error, NSMutableDictionary *value,BOOL result){
+        //network쏘기
+        if(!result){
+            onError([error code],[error userInfo]);
+            return;
+        }
+        else{
+            onSuccess();
+        }
+    }];
 }
 
 

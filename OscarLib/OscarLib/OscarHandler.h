@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OscarHandler : NSObject{
-
+    
     void (^oscarCallback)(NSError *error, NSDictionary *value,BOOL result);
 }
 
