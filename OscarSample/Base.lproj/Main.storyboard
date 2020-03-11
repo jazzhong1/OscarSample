@@ -166,7 +166,7 @@
         <!--Login Controller-->
         <scene sceneID="5oW-IZ-z1B">
             <objects>
-                <viewController storyboardIdentifier="loginController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oeh-um-q0D" customClass="LoginController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oeh-um-q0D" customClass="LoginController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1hv-mq-3pl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -37,11 +37,14 @@
                                                          bundle:nil];
     
     NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:@"fcmToken"];
-    [oscar testRun:value withToken:token callback:^(void){ //successCallback
+    [oscar testRun:value withToken:token
+          callback:^(void){ //successCallback
         NSLog(@"success");
         dispatch_async(dispatch_get_main_queue(), ^{
-            LoginController *add = [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
-            [self presentViewController:add
+            LoginController *login = [[LoginController alloc]init];
+            [login setCheckLogin:YES];
+            login= [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+            [self presentViewController:login
                                animated:YES
                              completion:nil];
         });
@@ -50,6 +53,15 @@
     }
           callback:^(NSInteger code,NSDictionary *info){ //errorCallback
         NSLog(@"Error :: %ld = %@",(long)code,info);
+        dispatch_async(dispatch_get_main_queue(), ^{
+                  LoginController *login = [[LoginController alloc]init];
+                  [login setCheckLogin:NO];
+                  login= [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+                  [self presentViewController:login
+                                     animated:YES
+                                   completion:nil];
+              });
+        
         
     }];
     NSLog(@"value %@",value);

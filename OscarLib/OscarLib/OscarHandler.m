@@ -27,6 +27,7 @@
     
     
     //url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    url = [url stringByAppendingFormat:@"?os=ios"];
     NSMutableURLRequest *request=[oscarNetWork makeRequest:url];
     [oscarNetWork sendServlet:request callback:oscarCallback];
 }
@@ -42,5 +43,13 @@
     url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSMutableURLRequest *request=[oscarNetWork makeRequest:url];
     [oscarNetWork sendServlet:request callback:oscarCallback];
+}
+- (void)sendFactor:(NSString *)url withValue:(NSString *)value withDict:(NSDictionary *)dict callback:(id)oscarCallback{
+    url = [url stringByAppendingFormat:@"?factor="];
+    url = [url stringByAppendingString: value];
+    url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+       NSMutableURLRequest *request=[oscarNetWork makeRequest:url];
+       [oscarNetWork sendServlet:request callback:oscarCallback];
+    
 }
 @end

@@ -8,6 +8,7 @@
 
 #import "FCMDelegate.h"
 #import "Firebase.h"
+#import "LoginController.h"
 
 #define isOSVersionOver10 ([[[[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."] objectAtIndex:0] integerValue] >= 10) // iOS 버전별로 구현하는 방법이 조금 다르기 때문에 mecro 사용
 
@@ -24,10 +25,11 @@
 @implementation FCMDelegate
 
 NSString *const kGCMMessageIDKey = @"gcm.message_id";
+BOOL check = YES;
 
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     // [START configure_firebase]
     [FIRApp configure];
     // [END configure_firebase]
@@ -80,7 +82,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     }
     
     // Print full message.
-    NSLog(@"%@", userInfo);
+    NSLog(@"didReceiveRemoteNotification %@", userInfo);
+    [self showViewController];
+    
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
@@ -98,7 +102,8 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     }
     
     // Print full message.
-    NSLog(@"%@", userInfo);
+    NSLog(@"didReceiveRemoteNotification background%@", userInfo);
+    [self showViewController];
     
     completionHandler(UIBackgroundFetchResultNewData);
 }
@@ -121,10 +126,12 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     }
     
     // Print full message.
-    NSLog(@"%@", userInfo);
+    NSLog(@"willPresentNotification 10 이상%@", userInfo);
     
     // Change this to your preferred presentation option
     completionHandler(UNNotificationPresentationOptionNone);
+    //[self showViewController];
+    
 }
 
 // Handle notification messages after display notification is tapped by the user.
@@ -136,18 +143,12 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
         NSLog(@"Message ID: %@", userInfo[kGCMMessageIDKey]);
     }
     
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
-    
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
-    
     // Print full message.b
-    NSLog(@"%@", userInfo);
+    NSLog(@"tapped %@", userInfo);
     //alert으로 띄우기
     completionHandler();
+    [self showViewController];
+    
 }
 
 // [END ios_10_message_handling]
@@ -188,6 +189,27 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     
     // With swizzling disabled you must set the APNs device token here.
     // [FIRMessaging messaging].APNSToken = deviceToken;
+}
+
+-(void)showViewController{
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    NSNumber *num = [NSNumber numberWithBool:check];
+    
+    //(storyBoardID)
+    //goldenGateTest
+    //self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+    LoginController *loginController =[storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+    
+    self.window.rootViewController = loginController;
+    [self.window makeKeyAndVisible];
+    if([loginController respondsToSelector:@selector(setCheckLogin:)]){
+        [loginController performSelector:@selector(setCheckLogin:) withObject:num];
+       //[self.viewController presentViewController:loginController animated:YES completion:nil];
+        [self.viewController viewDidLoad];
+        check = NO;
+    }
 }
 
 

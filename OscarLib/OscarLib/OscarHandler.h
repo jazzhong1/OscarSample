@@ -17,7 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 -(void)initialize:(NSString *)url callback:(id)oscarCallback;
+
 - (void)reg_auth : (NSString *)url  withValue:(NSString *)value withDict:(NSDictionary *)dict callback:oscarCallback;
+
+- (void)sendFactor : (NSString *)url  withValue:(NSString *)value withDict:(NSDictionary *)dict callback:oscarCallback;
 @end
 
 NS_ASSUME_NONNULL_END

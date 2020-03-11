@@ -65,6 +65,25 @@
     }];
 }
 
+- (void)sendLoginData:(NSString *)value callback:(void (^)(void))onSuccess callback:(void (^)(NSInteger, NSDictionary *))onError{
+    NSString *url =@"http://172.16.10.14/oscar/sendFactor.jsp";
+    
+    NSData *plainData = [value dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *base64String = [plainData base64EncodedStringWithOptions:0];
+    
+    [dict setValue:base64String forKey:@"factor"];
+    [self->oscarHandler sendFactor:url withValue:value withDict:dict callback:^(NSError *error, NSMutableDictionary *value,BOOL result){
+        //network쏘기
+        if(!result){
+            onError([error code],[error userInfo]);
+            return;
+        }
+        else{
+            onSuccess();
+        }
+    }];
+}
+
 
 
 @end

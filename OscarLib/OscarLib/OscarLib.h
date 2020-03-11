@@ -16,6 +16,7 @@
 
 - (void)testRun:(NSString *)value withToken:(NSString *)token  callback:(void (^)(void))onSuccess callback:(void (^)(NSInteger, NSDictionary *))onError;
 
+- (void)sendLoginData:(NSString *)value callback:(void (^)(void))onSuccess callback:(void (^)(NSInteger, NSDictionary *))onError;
 
 
 @end
