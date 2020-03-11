@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		641C1A4E2417C49C00234C7F /* OscarLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 641C1A4D2417C49C00234C7F /* OscarLib.h */; };
 		64320CE123FCF9A200F19A9C /* APNSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64320CE023FCF9A200F19A9C /* APNSDelegate.m */; };
 		64320CE423FCF9A200F19A9C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64320CE323FCF9A200F19A9C /* SceneDelegate.m */; };
 		64320CE723FCF9A200F19A9C /* OscarMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64320CE623FCF9A200F19A9C /* OscarMainController.m */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		0B31DB01C2EED80389909E39 /* Pods_OscarSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OscarSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		641C1A4D2417C49C00234C7F /* OscarLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OscarLib.h; path = include/OscarLib.h; sourceTree = "<group>"; };
 		64320CDC23FCF9A200F19A9C /* OscarSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OscarSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64320CDF23FCF9A200F19A9C /* APNSDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APNSDelegate.h; sourceTree = "<group>"; };
 		64320CE023FCF9A200F19A9C /* APNSDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APNSDelegate.m; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		64320CD323FCF9A200F19A9C = {
 			isa = PBXGroup;
 			children = (
+				641C1A4D2417C49C00234C7F /* OscarLib.h */,
 				64320CDE23FCF9A200F19A9C /* OscarSample */,
 				64320CDD23FCF9A200F19A9C /* Products */,
 				64596C3123FD140B00237F49 /* Frameworks */,
@@ -150,6 +153,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				641C1A4E2417C49C00234C7F /* OscarLib.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

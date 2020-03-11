@@ -15,7 +15,9 @@
 
 @end
 
-@implementation OscarMainController
+@implementation OscarMainController{
+        PushController *add;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,26 +26,33 @@
     _pushIcon.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapped:)];
     [_pushIcon addGestureRecognizer:tap];
-    
-    
-    
-    NSLog(@"check sendData %@",self.sendData);
+    add = [[PushController alloc]init];
+    [add setFcmToken:_fcmToken];
 }
+- (void)viewWillAppear:(BOOL)animated{
+    NSLog(@" viewWillAppear fcm %@",self.fcmToken);
+}
+- (void)viewDidAppear:(BOOL)animated{
+    NSLog(@"viewDidAppear fcm %@",self.fcmToken);
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    NSLog(@" viewWillDisappear fcm %@",self.fcmToken);
+}
+- (void)viewDidDisappear:(BOOL)animated{
+    NSLog(@"viewDidDisappear fcm %@",self.fcmToken);
+}
+
 
 - (void)tapped:(UITapGestureRecognizer*)tap
 {
-    NSLog(@"%@", tap.view);
+    NSLog(@"tapView%@", tap.view);
     //callback 함수로 받기
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
-                                                         bundle:nil];
-    PushController *add =
-               [storyboard instantiateViewControllerWithIdentifier:@"pushController"];
-
-    [add setFcmToken:self.fcmToken];
+                                                        bundle:nil];
+    add =[storyboard instantiateViewControllerWithIdentifier:@"pushController"];
     [self presentViewController:add
                        animated:YES 
-                     completion:nil];
-    
+                     completion:nil];    
 }
 
 

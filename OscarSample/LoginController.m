@@ -22,17 +22,21 @@
         [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"지문을 입력해주세요" reply:^(BOOL success, NSError *error){
             if(success){
                 NSLog(@"@@@@성공"); // 지문 인증 성공했을때
-                self.messageLabel.text = @"로그인 성공 하셨습니다.";
-                [super viewDidLoad];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                          self.messageLabel.text = @"로그인 성공 하셨습니다.";
+                       });
             }else{
+                dispatch_async(dispatch_get_main_queue(), ^{
                 self.messageLabel.text = @"로그인 실패 하셨습니다.";
+                });
                 NSLog(@"@@@@실패");
             }
         }];
     }else{
         NSLog(@"Touch 지원하지 않음");
     }
-    
+    [super viewDidLoad];
+
    
 }
 

@@ -35,7 +35,7 @@
    
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
                                                                   bundle:nil];
-    [oscar testRun:value withToken:_fcmToken callback:^(void){ //successCallback
+    [oscar testRun:value withToken:self.fcmToken callback:^(void){ //successCallback
         NSLog(@"success");
        
         LoginController *add = [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
