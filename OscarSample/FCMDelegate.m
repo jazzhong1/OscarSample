@@ -8,7 +8,6 @@
 
 #import "FCMDelegate.h"
 #import "Firebase.h"
-#import "LoginController.h"
 
 #define isOSVersionOver10 ([[[[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."] objectAtIndex:0] integerValue] >= 10) // iOS 버전별로 구현하는 방법이 조금 다르기 때문에 mecro 사용
 
@@ -82,7 +81,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Print full message.
     NSLog(@"didReceiveRemoteNotification %@", userInfo);
-    [self showViewController];
     
 }
 
@@ -102,9 +100,10 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     
     // Print full message.
     NSLog(@"didReceiveRemoteNotification background%@", userInfo);
-    [self showViewController];
-    
     completionHandler(UIBackgroundFetchResultNewData);
+    [self showViewController];
+    check=!check;
+    
 }
 // [END receive_message]
 
@@ -129,8 +128,6 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     
     // Change this to your preferred presentation option
     completionHandler(UNNotificationPresentationOptionNone);
-    //[self showViewController];
-    
 }
 
 // Handle notification messages after display notification is tapped by the user.
@@ -147,6 +144,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     //alert으로 띄우기
     completionHandler();
     [self showViewController];
+    check=!check;
     
 }
 
@@ -205,9 +203,6 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     [self.window makeKeyAndVisible];
     if([self.viewController respondsToSelector:@selector(setCheckLogin:)]){
         [self.viewController performSelector:@selector(setCheckLogin:) withObject:num];
-       //[self.viewController presentViewController:loginController animated:YES completion:nil];
-        [self.viewController viewDidLoad];
-        check = NO;
     }
 }
 

@@ -24,7 +24,6 @@
 		645EECDC241738BD00205F38 /* meteor.png in Resources */ = {isa = PBXBuildFile; fileRef = 645EECDB241738BD00205F38 /* meteor.png */; };
 		645EECDE24174C9A00205F38 /* word.png in Resources */ = {isa = PBXBuildFile; fileRef = 645EECDD24174C9A00205F38 /* word.png */; };
 		645EECE12417674600205F38 /* libOscarLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 645EECE02417674600205F38 /* libOscarLib.a */; };
-		645EECE5241773E000205F38 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EECE4241773E000205F38 /* LoginController.m */; };
 		645EECE824177A6600205F38 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 645EECE724177A6600205F38 /* LocalAuthentication.framework */; };
 		6466C2852418D2B900A4A89A /* AuntenticateController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6466C2832418D2B900A4A89A /* AuntenticateController.h */; };
 		6466C2862418D2B900A4A89A /* AuntenticateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6466C2842418D2B900A4A89A /* AuntenticateController.m */; };
@@ -58,8 +57,6 @@
 		645EECDB241738BD00205F38 /* meteor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteor.png; sourceTree = "<group>"; };
 		645EECDD24174C9A00205F38 /* word.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = word.png; sourceTree = "<group>"; };
 		645EECE02417674600205F38 /* libOscarLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOscarLib.a; path = lib/libOscarLib.a; sourceTree = "<group>"; };
-		645EECE3241773E000205F38 /* LoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
-		645EECE4241773E000205F38 /* LoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		645EECE724177A6600205F38 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		6466C2832418D2B900A4A89A /* AuntenticateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuntenticateController.h; sourceTree = "<group>"; };
 		6466C2842418D2B900A4A89A /* AuntenticateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuntenticateController.m; sourceTree = "<group>"; };
@@ -113,8 +110,6 @@
 				64320CE623FCF9A200F19A9C /* OscarMainController.m */,
 				645EECD82417340C00205F38 /* PushController.h */,
 				645EECD92417340C00205F38 /* PushController.m */,
-				645EECE3241773E000205F38 /* LoginController.h */,
-				645EECE4241773E000205F38 /* LoginController.m */,
 				64320CE823FCF9A200F19A9C /* Main.storyboard */,
 				64320CED23FCF9A200F19A9C /* LaunchScreen.storyboard */,
 				645EECB724120FCC00205F38 /* oscarIcon.png */,
@@ -285,7 +280,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				645EECE5241773E000205F38 /* LoginController.m in Sources */,
 				64320CE723FCF9A200F19A9C /* OscarMainController.m in Sources */,
 				645EECDA2417340C00205F38 /* PushController.m in Sources */,
 				64320CE123FCF9A200F19A9C /* APNSDelegate.m in Sources */,

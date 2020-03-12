@@ -14,6 +14,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _returnBtn.hidden=YES;
     [self checkBiometric:_checkLogin];
 }
 
@@ -32,20 +33,22 @@
                     [oscar sendLoginData:@"testFactor" callback:^(void){
                         dispatch_async(dispatch_get_main_queue(), ^{
                                               self.messageLabel.text = @"로그인 성공 하셨습니다.";
+                            self->_returnBtn.hidden=NO;
                                           });
                         
                     }callback:^(NSInteger code,NSDictionary *info){
                         dispatch_async(dispatch_get_main_queue(), ^{
                                               self.messageLabel.text = @"factor'로그인 실패";
+                            self->_returnBtn.hidden=NO;
                                           });
                         
                     }];
-                  
                 }else{
                     //sendfactor
                     NSLog(@"error %@",error);
                     dispatch_async(dispatch_get_main_queue(), ^{
                         self.messageLabel.text = @"로그인 실패 하셨습니다.";
+                        self->_returnBtn.hidden=NO;
                     });
                 }
             }];

@@ -24,6 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     ///스토리보드 관련  소스
+    
     [self pasteConfiguration];
     [self initializeRemoteNotification];
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
