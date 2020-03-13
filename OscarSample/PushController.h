@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UITextField *number2;
 @property (weak, nonatomic) IBOutlet UITextField *number3;
 @property (weak, nonatomic) IBOutlet UITextField *number4;
+@property (nonatomic) NSArray *fieldArray;
 
 @property (strong, nonatomic) IBOutlet NSString *fcmToken;
 

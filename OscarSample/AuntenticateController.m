@@ -21,7 +21,6 @@
 -(void)checkBiometric:(BOOL)flag{
     //지문 인증하고 실패하면
     //label 바꾸기..
-   
     if([NSNumber numberWithBool:_checkLogin]){
         LAContext *context = [[LAContext alloc]init];
         NSError *error;

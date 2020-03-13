@@ -132,7 +132,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Do9-hV-OSd">
-                                <rect key="frame" x="60" y="370" width="255" height="33"/>
+                                <rect key="frame" x="60" y="351" width="255" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="완료">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -152,13 +152,13 @@
                             <constraint firstItem="Do9-hV-OSd" firstAttribute="leading" secondItem="KDk-jG-Je9" secondAttribute="leading" constant="60" id="HE7-jO-HE4"/>
                             <constraint firstItem="Fv7-N1-lGj" firstAttribute="top" secondItem="KDk-jG-Je9" secondAttribute="top" constant="139" id="Tfc-mN-YW4"/>
                             <constraint firstItem="5Fu-Ez-pHw" firstAttribute="top" secondItem="Fv7-N1-lGj" secondAttribute="bottom" constant="110" id="Wkk-vf-nIM"/>
-                            <constraint firstItem="Do9-hV-OSd" firstAttribute="top" secondItem="GB0-jX-im3" secondAttribute="bottom" constant="57" id="aar-Kc-Vm5"/>
-                            <constraint firstItem="KDk-jG-Je9" firstAttribute="bottom" secondItem="Do9-hV-OSd" secondAttribute="bottom" constant="264" id="btD-WE-11s"/>
+                            <constraint firstItem="Do9-hV-OSd" firstAttribute="top" secondItem="GB0-jX-im3" secondAttribute="bottom" constant="38" id="aar-Kc-Vm5"/>
+                            <constraint firstItem="KDk-jG-Je9" firstAttribute="bottom" secondItem="Do9-hV-OSd" secondAttribute="bottom" constant="283" id="btD-WE-11s"/>
                             <constraint firstItem="5Fu-Ez-pHw" firstAttribute="leading" secondItem="bvk-bW-GLZ" secondAttribute="trailing" constant="25" id="dCC-26-Ia7"/>
-                            <constraint firstItem="Do9-hV-OSd" firstAttribute="top" secondItem="bvk-bW-GLZ" secondAttribute="bottom" constant="57" id="fhQ-59-hZc"/>
+                            <constraint firstItem="Do9-hV-OSd" firstAttribute="top" secondItem="bvk-bW-GLZ" secondAttribute="bottom" constant="38" id="fhQ-59-hZc"/>
                             <constraint firstItem="bvk-bW-GLZ" firstAttribute="leading" secondItem="KDk-jG-Je9" secondAttribute="leading" constant="50" id="hSM-Uv-lWa"/>
-                            <constraint firstItem="Do9-hV-OSd" firstAttribute="top" secondItem="1GA-km-oLB" secondAttribute="bottom" constant="57" id="k1z-j3-zWu"/>
-                            <constraint firstItem="Do9-hV-OSd" firstAttribute="top" secondItem="5Fu-Ez-pHw" secondAttribute="bottom" constant="57" id="kJu-jg-hO6"/>
+                            <constraint firstItem="Do9-hV-OSd" firstAttribute="top" secondItem="1GA-km-oLB" secondAttribute="bottom" constant="38" id="k1z-j3-zWu"/>
+                            <constraint firstItem="Do9-hV-OSd" firstAttribute="top" secondItem="5Fu-Ez-pHw" secondAttribute="bottom" constant="38" id="kJu-jg-hO6"/>
                             <constraint firstItem="bvk-bW-GLZ" firstAttribute="top" secondItem="Fv7-N1-lGj" secondAttribute="bottom" constant="110" id="p49-dO-3UE"/>
                             <constraint firstItem="KDk-jG-Je9" firstAttribute="trailing" secondItem="Fv7-N1-lGj" secondAttribute="trailing" constant="50" id="qMb-ns-KwS"/>
                             <constraint firstItem="Fv7-N1-lGj" firstAttribute="leading" secondItem="KDk-jG-Je9" secondAttribute="leading" constant="50" id="wQn-33-2FA"/>
@@ -267,6 +267,6 @@
         <image name="word.png" width="384" height="384"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="as8-YK-iR8"/>
+        <segue reference="uU6-6d-5V4"/>
     </inferredMetricsTieBreakers>
 </document>

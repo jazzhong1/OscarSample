@@ -55,12 +55,18 @@
     
     [self->oscarHandler reg_auth:url withValue:value withDict:dict callback:^(NSError *error, NSMutableDictionary *value,BOOL result){
         //network쏘기
-        if(!result){
+        NSString *code = [value objectForKey:@"code"];
+        if(!result || [code intValue]!=0){
+            if([code intValue]!=0){
+               onError([code intValue],[value objectForKey:@"message"]);
+                return;
+            }
             onError([error code],[error userInfo]);
             return;
         }
         else{
             onSuccess();
+            return;
         }
     }];
 }

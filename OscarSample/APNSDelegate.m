@@ -82,17 +82,7 @@
 -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     NSLog(@"Remote notification : %@", userInfo);
     
-    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"loginConroller"];
-    
-    if([self.viewController respondsToSelector:@selector(setSendData:)]){
-        [self.viewController performSelector:@selector(setSendData:) withObject:userInfo];
-        [self.viewController viewDidLoad];
-    }
-    
+   
 }
 
 // 푸시 서비스 등록 실패시 호출되는 함수
@@ -105,10 +95,6 @@
 // 앱이 실행 되고 있을때 푸시 데이터 처리
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
     NSLog(@"Remote notification : %@",notification.request.content.userInfo);
-    if([self.viewController respondsToSelector:@selector(setSendData:)]){
-        [self.viewController performSelector:@selector(setSendData:) withObject:notification.request.content.userInfo];
-        [self.viewController viewDidLoad];
-    }
     completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound);
 }
 

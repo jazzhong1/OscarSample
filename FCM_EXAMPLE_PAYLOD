@@ -16,3 +16,18 @@ Host: fcm.googleapis.com
       "sound": "default"
    }
 }
+
+##ios 10
+{
+    "to":"eiy96d22fUe5pmalKmYqT0:APA91bGOcRhFntoNxeo_DgZjLP1cjVtw7msAElXPtcrzgC1iMH2f6E9vQQRG5eBuw5o6nzimlE0x_llyQ5_enyUlMYmctWaTF1YOT4Z7EeSeUryBbh32NjK9wO3RjfWQqFlWoZ10AsmH",
+  
+      "priority":"high",
+  
+      "data":{
+"urlLink":"TEST",
+"title": "OSCAR",
+ "message": "test oscar sample.."
+}
+
+      "notification"{"title":"Oscar", "subtitle":"myTitle", "body":"check123", "sound":"default"}  
+}

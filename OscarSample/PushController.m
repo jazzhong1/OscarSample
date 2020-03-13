@@ -18,6 +18,8 @@
     self.number2.delegate = self;
     self.number3.delegate = self;
     self.number4.delegate = self;
+    
+    //_fieldArray = [NSArray arrayWithObject:_number1,_number2,_number3,_number4,nil];
     oscar = [[OscarLib alloc]init];
     [oscar appConnect:nil callback:^(void){ //successCallback
         NSLog(@"success");
@@ -57,19 +59,14 @@
               callback:^(NSInteger code,NSDictionary *info){ //errorCallback
             NSLog(@"Error :: %ld = %@",(long)code,info);
             dispatch_async(dispatch_get_main_queue(), ^{
-                AuntenticateController *auth = [[AuntenticateController alloc]init];
-                [auth setCheckLogin:NO];
-                auth= [storyboard instantiateViewControllerWithIdentifier:@"auth"];
-                [self presentViewController:auth
-                                   animated:YES
-                                 completion:nil];
+                [self showAlert:@"Oscar" withMessage:@"인증번호 일치하지 않습니다."];
                 [self clearTextFeld];
             });
         }];
         NSLog(@"value %@",value);
     }
     else{
-        [self showAlert:@"Oscar" :@"4개 숫자를 입력 해 주세요"];
+        [self showAlert:@"Oscar" withMessage:@"4개 숫자를 입력 해 주세요"];
         NSLog(@"4개 이하 의 글자.");
         //alet띄우기
     }
@@ -83,17 +80,49 @@
     _number4.text=nil;
 }
 
--(void)showAlert:(NSString *)title:(NSString *)message{
-      //팝업구현을 하는 클래스
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-        
-        //팝업 버튼 구현하는 클래스
-        UIAlertAction *closeAction = [UIAlertAction actionWithTitle:@"닫기" style:UIAlertActionStyleCancel handler:nil];
-        
-        //팝업 클래스에 버튼을 넣는 메소드 호출
-        [alert addAction:closeAction];
-        
-        //나타나게
-        [self presentViewController:alert animated:YES completion:nil];
+-(void)showAlert:(NSString *)title withMessage:(NSString *)message{
+    //팝업구현을 하는 클래스
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    //팝업 버튼 구현하는 클래스
+    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:@"닫기" style:UIAlertActionStyleCancel handler:nil];
+    
+    //팝업 클래스에 버튼을 넣는 메소드 호출
+    [alert addAction:closeAction];
+    
+    //나타나게
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == _number1) {
+        [textField resignFirstResponder];
+        [_number2 becomeFirstResponder];
+    } else if (textField == _number2) {
+        [textField resignFirstResponder];
+        [_number3 becomeFirstResponder];
+    } else if (textField == _number3) {
+        [textField resignFirstResponder];
+        [_number4 becomeFirstResponder];
+    }
+    return YES;
+}
+
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    static const NSUInteger limit = 1; // we limit to 1 characters
+    NSUInteger allowedLength = limit - [textField.text length] + range.length;
+    if (string.length > allowedLength) {
+        if (string.length > 1) {
+            // get at least the part of the new string that fits
+            NSString *limitedString = [string substringToIndex:allowedLength];
+            NSMutableString *newString = [textField.text mutableCopy];
+            [newString replaceCharactersInRange:range withString:limitedString];
+            textField.text = newString;
+        }
+        return NO;
+    } else {
+        return YES;
+    }
 }
 @end

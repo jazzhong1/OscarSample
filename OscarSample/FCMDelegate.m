@@ -28,6 +28,7 @@ BOOL check = YES;
 
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     // [START configure_firebase]
     [FIRApp configure];
     // [END configure_firebase]
