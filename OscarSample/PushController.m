@@ -78,6 +78,7 @@
 }
 - (IBAction)cancelbtn:(id)sender {
     [self clearTextFeld];
+    [_number1 becomeFirstResponder];
 }
 
 -(void)clearTextFeld{
