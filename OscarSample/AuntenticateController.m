@@ -29,7 +29,7 @@
                  OscarLib *oscar = [[OscarLib alloc]init];
                 if(success){
                     NSLog(@"@@@@성공"); // 지문 인증 성공했을때
-                    [oscar sendLoginData:@"testFactor" callback:^(void){
+                    [oscar sendLoginData:@"http://172.16.10.14/oscar/sendFactor.jsp" withValue:@"sendFactor" callback:^(void){
                         dispatch_async(dispatch_get_main_queue(), ^{
                                               self.messageLabel.text = @"로그인 성공 하셨습니다.";
                             self->_returnBtn.hidden=NO;

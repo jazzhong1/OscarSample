@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		641C1A4E2417C49C00234C7F /* OscarLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 641C1A4D2417C49C00234C7F /* OscarLib.h */; };
 		64320CE123FCF9A200F19A9C /* APNSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64320CE023FCF9A200F19A9C /* APNSDelegate.m */; };
 		64320CE423FCF9A200F19A9C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64320CE323FCF9A200F19A9C /* SceneDelegate.m */; };
 		64320CE723FCF9A200F19A9C /* OscarMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64320CE623FCF9A200F19A9C /* OscarMainController.m */; };
@@ -27,12 +26,12 @@
 		645EECE824177A6600205F38 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 645EECE724177A6600205F38 /* LocalAuthentication.framework */; };
 		6466C2852418D2B900A4A89A /* AuntenticateController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6466C2832418D2B900A4A89A /* AuntenticateController.h */; };
 		6466C2862418D2B900A4A89A /* AuntenticateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6466C2842418D2B900A4A89A /* AuntenticateController.m */; };
+		64A15A13241B4FC50051F9AC /* OscarLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 64A15A12241B4FC50051F9AC /* OscarLib.h */; };
 		7816EBDF54782AA382362ACB /* Pods_OscarSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B31DB01C2EED80389909E39 /* Pods_OscarSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B31DB01C2EED80389909E39 /* Pods_OscarSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OscarSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		641C1A4D2417C49C00234C7F /* OscarLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OscarLib.h; path = ../include/OscarLib.h; sourceTree = "<group>"; };
 		64320CDC23FCF9A200F19A9C /* OscarSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OscarSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64320CDF23FCF9A200F19A9C /* APNSDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APNSDelegate.h; sourceTree = "<group>"; };
 		64320CE023FCF9A200F19A9C /* APNSDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APNSDelegate.m; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		645EECE724177A6600205F38 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		6466C2832418D2B900A4A89A /* AuntenticateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuntenticateController.h; sourceTree = "<group>"; };
 		6466C2842418D2B900A4A89A /* AuntenticateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuntenticateController.m; sourceTree = "<group>"; };
+		64A15A12241B4FC50051F9AC /* OscarLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OscarLib.h; path = include/OscarLib.h; sourceTree = SOURCE_ROOT; };
 		82F21E9EA093D9E48B8ACDA6 /* Pods-OscarSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OscarSample.debug.xcconfig"; path = "Target Support Files/Pods-OscarSample/Pods-OscarSample.debug.xcconfig"; sourceTree = "<group>"; };
 		B891E71D6D7455D63B664E0E /* Pods-OscarSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OscarSample.release.xcconfig"; path = "Target Support Files/Pods-OscarSample/Pods-OscarSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,9 +99,9 @@
 		64320CDE23FCF9A200F19A9C /* OscarSample */ = {
 			isa = PBXGroup;
 			children = (
+				64A15A12241B4FC50051F9AC /* OscarLib.h */,
 				64320CDF23FCF9A200F19A9C /* APNSDelegate.h */,
 				64320CE023FCF9A200F19A9C /* APNSDelegate.m */,
-				641C1A4D2417C49C00234C7F /* OscarLib.h */,
 				645EECAB240F892000205F38 /* FCMDelegate.h */,
 				645EECAC240F892000205F38 /* FCMDelegate.m */,
 				64320CE223FCF9A200F19A9C /* SceneDelegate.h */,
@@ -154,8 +154,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				641C1A4E2417C49C00234C7F /* OscarLib.h in Headers */,
 				6466C2852418D2B900A4A89A /* AuntenticateController.h in Headers */,
+				64A15A13241B4FC50051F9AC /* OscarLib.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

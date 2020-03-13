@@ -129,6 +129,14 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     
     // Change this to your preferred presentation option
     completionHandler(UNNotificationPresentationOptionNone);
+    //completionHandler(UNNotificationPresentationOptionAlert|UNNotificationPresentationOptionSound|UNNotificationPresentationOptionBadge);
+    /*
+     completionHandler(
+     [UNNotificationPresentationOptions.Alert,
+      UNNotificationPresentationOptions.Sound,
+      UNNotificationPresentationOptions.Badge])
+     */
+
 }
 
 // Handle notification messages after display notification is tapped by the user.
@@ -146,6 +154,14 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     completionHandler();
     [self showViewController];
     check=!check;
+    
+    /*if([[userInfo objectForKey:@"message"]isEqualToString:@"please send factor to browser"]){
+    [self showViewController];
+    check=!check;
+    }
+    else{
+        [self showAlert:@"OscarSample" withMessage:@"localNotification Test입니다."];
+    }*/
     
 }
 
@@ -207,5 +223,18 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     }
 }
 
+-(void)showAlert:(NSString *)title withMessage:(NSString *)message{
+    //팝업구현을 하는 클래스
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    //팝업 버튼 구현하는 클래스
+    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:@"닫기" style:UIAlertActionStyleCancel handler:nil];
+    
+    //팝업 클래스에 버튼을 넣는 메소드 호출
+    [alert addAction:closeAction];
+    
+    //나타나게
+    [self.viewController presentViewController:alert animated:YES completion:nil];
+}
 
 @end

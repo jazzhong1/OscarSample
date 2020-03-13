@@ -10,6 +10,8 @@
 #import "AuntenticateController.h"
 #import "OscarLib.h"
 
+#define MAX_LENGTH 1;\
+
 @implementation PushController{
     OscarLib *oscar;
 }
@@ -19,9 +21,9 @@
     self.number3.delegate = self;
     self.number4.delegate = self;
     
-    //_fieldArray = [NSArray arrayWithObject:_number1,_number2,_number3,_number4,nil];
     oscar = [[OscarLib alloc]init];
-    [oscar appConnect:nil callback:^(void){ //successCallback
+    
+    [oscar appConnect:@"http://172.16.10.14/oscar/newApp.jsp" withValue:nil  callback:^(void){ //successCallback
         NSLog(@"success");
     }
              callback:^(NSInteger code,NSDictionary *info){ //errorCallback
@@ -43,7 +45,9 @@
                                                              bundle:nil];
         
         NSString *token = [[NSUserDefaults standardUserDefaults]valueForKey:@"fcmToken"];
-        [oscar testRun:value withToken:token
+        
+        
+        [oscar testRun:@"http://172.16.10.14/oscar/reg_auth.jsp" withValue:value withToken:token
               callback:^(void){ //successCallback
             NSLog(@"success");
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -72,6 +76,10 @@
     }
     
 }
+- (IBAction)cancelbtn:(id)sender {
+    [self clearTextFeld];
+}
+
 -(void)clearTextFeld{
     
     _number1.text=nil;
@@ -94,24 +102,11 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == _number1) {
-        [textField resignFirstResponder];
-        [_number2 becomeFirstResponder];
-    } else if (textField == _number2) {
-        [textField resignFirstResponder];
-        [_number3 becomeFirstResponder];
-    } else if (textField == _number3) {
-        [textField resignFirstResponder];
-        [_number4 becomeFirstResponder];
-    }
-    return YES;
-}
-
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     static const NSUInteger limit = 1; // we limit to 1 characters
     NSUInteger allowedLength = limit - [textField.text length] + range.length;
+    BOOL result;
     if (string.length > allowedLength) {
         if (string.length > 1) {
             // get at least the part of the new string that fits
@@ -120,9 +115,26 @@
             [newString replaceCharactersInRange:range withString:limitedString];
             textField.text = newString;
         }
-        return NO;
+        result= NO;
     } else {
-        return YES;
+        result= YES;
     }
+    if(result == YES){
+        if (textField == _number1) {
+            _number1.text=string;
+            [_number2 becomeFirstResponder];
+        } else if (textField == _number2) {
+            
+            _number2.text=string;
+            [_number3 becomeFirstResponder];
+        } else if (textField == _number3) {
+            
+            _number3.text=string;
+            [_number4 becomeFirstResponder];
+        }
+    }
+    
+    return result;
+    
 }
 @end

@@ -12,6 +12,8 @@
 
 @interface OscarMainController ()
 @property (weak, nonatomic) IBOutlet UIImageView *pushIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *qrIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *registerIcon;
 
 @end
 
@@ -24,10 +26,24 @@
     // Do any additional setup after loading the view.
     
     _pushIcon.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapped:)];
-    [_pushIcon addGestureRecognizer:tap];
+    _qrIcon.userInteractionEnabled = YES;
+    _registerIcon.userInteractionEnabled = YES;
+   
+    UITapGestureRecognizer *regTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(registerTapped:)];
+    
+    UITapGestureRecognizer *qrTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(qrTapped:)];
+    
+    UITapGestureRecognizer *pushTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushTapped:)];
+    
+    [_pushIcon addGestureRecognizer:pushTap];
+    [_qrIcon addGestureRecognizer:qrTap];
+    [_registerIcon addGestureRecognizer:regTap];
+    
+    
+    
+    
 }
-- (void)tapped:(UITapGestureRecognizer*)tap
+- (void)registerTapped:(UITapGestureRecognizer*)tap
 {
     NSLog(@"tapView%@", tap.view);
     //callback 함수로 받기
@@ -41,6 +57,27 @@
                        animated:YES 
                      completion:nil];    
 }
+-(void)qrTapped:(UITapGestureRecognizer *)tap{
+    [self showAlert:@"OscarSample" withMessage:@"미구현...입니다"];
+}
+-(void)pushTapped:(UITapGestureRecognizer *)tap{
+    [self fireLocalNotification];
+}
+
+
+-(void)showAlert:(NSString *)title withMessage:(NSString *)message{
+    //팝업구현을 하는 클래스
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    //팝업 버튼 구현하는 클래스
+    UIAlertAction *closeAction = [UIAlertAction actionWithTitle:@"닫기" style:UIAlertActionStyleCancel handler:nil];
+    
+    //팝업 클래스에 버튼을 넣는 메소드 호출
+    [alert addAction:closeAction];
+    
+    //나타나게
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 
 -(void)fireLocalNotification{
@@ -49,13 +86,15 @@
     UILocalNotification *noti = [[UILocalNotification alloc]init];
     
     // 알람 발생 시각 설정. 5초후로 설정. NSDate 타입.
-    noti.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
+    noti.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
     
     // timeZone 설정.
     noti.timeZone = [NSTimeZone systemTimeZone];
     
+    noti.alertTitle= @"Oscar";
+    
     // 알림 메시지 설정
-    noti.alertBody = @"Just Do It";
+    noti.alertBody = @"LocalNotification Test입니다.";
     
     // 알림 액션 설정
     noti.alertAction = @"GOGO";

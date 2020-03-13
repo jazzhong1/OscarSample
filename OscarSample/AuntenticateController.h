@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "OscarLib.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 @property (weak, nonatomic) IBOutlet UIButton *returnBtn;
 @property BOOL checkLogin;
+
+- (instancetype)init:(OscarLib *)oscar;
 
 @end
 

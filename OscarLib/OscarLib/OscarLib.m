@@ -31,8 +31,8 @@
     return self;
 }
 
-- (void)appConnect:(NSString *)value callback:(void (^)(void))onSuccess callback:(void (^)(NSInteger, NSDictionary *))onError{
-    NSString *url =@"http://172.16.10.14/oscar/newApp.jsp";
+- (void)appConnect:(NSString *)url withValue:(NSString *)value callback:(void (^)(void))onSuccess callback:(void (^)(NSInteger, NSDictionary *))onError{
+   // NSString *url =@"http://172.16.10.14/oscar/newApp.jsp";
     
     [oscarHandler initialize:url callback:^(NSError *error, NSMutableDictionary *oscarValue,BOOL result){
         //netWork쏘기...콜백 받고
@@ -49,8 +49,8 @@
     
     
 }
-- (void)testRun:(NSString *)value withToken:(NSString *)token  callback:(void (^)(void))onSuccess callback:(void (^)(NSInteger, NSDictionary *))onError{
-    NSString *url =@"http://172.16.10.14/oscar/reg_auth.jsp";
+- (void)testRun:(NSString *)url withValue:value withToken:(NSString *)token  callback:(void (^)(void))onSuccess callback:(void (^)(NSInteger, NSDictionary *))onError{
+    //NSString *url =@"http://172.16.10.14/oscar/reg_auth.jsp";
     [dict setValue:token forKey:@"tokenid"];
     
     [self->oscarHandler reg_auth:url withValue:value withDict:dict callback:^(NSError *error, NSMutableDictionary *value,BOOL result){
@@ -71,8 +71,8 @@
     }];
 }
 
-- (void)sendLoginData:(NSString *)value callback:(void (^)(void))onSuccess callback:(void (^)(NSInteger, NSDictionary *))onError{
-    NSString *url =@"http://172.16.10.14/oscar/sendFactor.jsp";
+- (void)sendLoginData:(NSString *)url withValue:(NSString *)value callback:(void (^)(void))onSuccess callback:(void (^)(NSInteger, NSDictionary *))onError{
+    //NSString *url =@"http://172.16.10.14/oscar/sendFactor.jsp";
     
     NSData *plainData = [value dataUsingEncoding:NSUTF8StringEncoding];
     NSString *base64String = [plainData base64EncodedStringWithOptions:0];
