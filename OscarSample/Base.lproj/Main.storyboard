@@ -121,6 +121,9 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GB0-jX-im3">
                                 <rect key="frame" x="275" y="323" width="50" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Mua-cJ-2Sb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
@@ -151,7 +154,6 @@
                                 </state>
                                 <connections>
                                     <action selector="cancelbtn:" destination="eRP-sh-TpG" eventType="touchUpInside" id="IV4-bU-XJP"/>
-                                    <action selector="submitBtn:" destination="eRP-sh-TpG" eventType="touchUpInside" id="gcg-fC-Oth"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -159,11 +161,13 @@
                         <constraints>
                             <constraint firstItem="1GA-km-oLB" firstAttribute="top" secondItem="Fv7-N1-lGj" secondAttribute="bottom" constant="110" id="2OM-Db-kYL"/>
                             <constraint firstItem="KDk-jG-Je9" firstAttribute="trailing" secondItem="Do9-hV-OSd" secondAttribute="trailing" constant="200" id="45L-ri-x0i"/>
+                            <constraint firstItem="Cci-9E-cVL" firstAttribute="top" secondItem="bvk-bW-GLZ" secondAttribute="bottom" constant="38" id="7IA-St-1mE"/>
                             <constraint firstItem="1GA-km-oLB" firstAttribute="leading" secondItem="5Fu-Ez-pHw" secondAttribute="trailing" constant="23" id="83G-En-Hex"/>
                             <constraint firstItem="GB0-jX-im3" firstAttribute="leading" secondItem="1GA-km-oLB" secondAttribute="trailing" constant="27" id="Avg-8P-trF"/>
                             <constraint firstItem="Cci-9E-cVL" firstAttribute="top" secondItem="GB0-jX-im3" secondAttribute="bottom" constant="38" id="ChE-pq-e7k"/>
                             <constraint firstItem="KDk-jG-Je9" firstAttribute="trailing" secondItem="GB0-jX-im3" secondAttribute="trailing" constant="50" id="Gpt-FX-ZH8"/>
                             <constraint firstItem="Do9-hV-OSd" firstAttribute="leading" secondItem="KDk-jG-Je9" secondAttribute="leading" constant="60" id="HE7-jO-HE4"/>
+                            <constraint firstItem="Cci-9E-cVL" firstAttribute="top" secondItem="5Fu-Ez-pHw" secondAttribute="bottom" constant="38" id="IDc-rK-CSJ"/>
                             <constraint firstItem="Cci-9E-cVL" firstAttribute="top" secondItem="1GA-km-oLB" secondAttribute="bottom" constant="38" id="JXu-91-Lmb"/>
                             <constraint firstItem="Fv7-N1-lGj" firstAttribute="top" secondItem="KDk-jG-Je9" secondAttribute="top" constant="139" id="Tfc-mN-YW4"/>
                             <constraint firstItem="5Fu-Ez-pHw" firstAttribute="top" secondItem="Fv7-N1-lGj" secondAttribute="bottom" constant="110" id="Wkk-vf-nIM"/>

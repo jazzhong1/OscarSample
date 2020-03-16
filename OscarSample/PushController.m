@@ -10,7 +10,7 @@
 #import "AuntenticateController.h"
 #import "OscarLib.h"
 
-#define MAX_LENGTH 1;\
+#define MAX_LENGTH 1;
 
 @implementation PushController{
     OscarLib *oscar;
@@ -103,11 +103,11 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     static const NSUInteger limit = 1; // we limit to 1 characters
     NSUInteger allowedLength = limit - [textField.text length] + range.length;
-    BOOL result;
+    BOOL result = YES;
+    UITextField *_code;
     if (string.length > allowedLength) {
         if (string.length > 1) {
             // get at least the part of the new string that fits
@@ -120,21 +120,19 @@
     } else {
         result= YES;
     }
+    
+    
     if(result == YES){
         if (textField == _number1) {
-            _number1.text=string;
-            [_number2 becomeFirstResponder];
+            _code = _number2;
         } else if (textField == _number2) {
-            
-            _number2.text=string;
-            [_number3 becomeFirstResponder];
+            _code = _number3;
         } else if (textField == _number3) {
-            
-            _number3.text=string;
-            [_number4 becomeFirstResponder];
+            _code = _number4;
         }
+        [_code performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.1];
+        
     }
-    
     return result;
     
 }
