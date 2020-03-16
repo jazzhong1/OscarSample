@@ -1,12 +1,12 @@
 //
-//  PushController.m
+//  RegisterController.m
 //  OscarSample
 //
 //  Created by yettie on 10/03/2020.
 //  Copyright © 2020 yettie. All rights reserved.
 //
 
-#import "PushController.h"
+#import "RegisterController.h"
 #import "AuntenticateController.h"
 #import "OscarLib.h"
 #import <LocalAuthentication/LocalAuthentication.h>
@@ -14,7 +14,7 @@
 
 #define MAX_LENGTH 1;
 
-@implementation PushController{
+@implementation RegisterController{
     OscarLib *oscar;
 }
 - (void)viewDidLoad {

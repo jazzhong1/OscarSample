@@ -1,5 +1,5 @@
 //
-//  PushController.h
+//  RegisterController.h
 //  OscarSample
 //
 //  Created by yettie on 10/03/2020.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PushController : UIViewController<UITextFieldDelegate>
+@interface RegisterController : UIViewController<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *number1;
 @property (weak, nonatomic) IBOutlet UITextField *number2;

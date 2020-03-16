@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="-388" y="445"/>
         </scene>
-        <!--Push Controller-->
+        <!--Register Controller-->
         <scene sceneID="lRN-Mt-g8v">
             <objects>
-                <viewController storyboardIdentifier="pushController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eRP-sh-TpG" customClass="PushController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eRP-sh-TpG" customClass="RegisterController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="pushController" id="ZTk-u3-9aP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

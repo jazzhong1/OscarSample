@@ -20,7 +20,7 @@
 		645EECBA24120FCD00205F38 /* oscarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 645EECB724120FCC00205F38 /* oscarIcon.png */; };
 		645EECBB24120FCD00205F38 /* pushIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 645EECB824120FCC00205F38 /* pushIcon.png */; };
 		645EECBC24120FCD00205F38 /* qrIcom.png in Resources */ = {isa = PBXBuildFile; fileRef = 645EECB924120FCD00205F38 /* qrIcom.png */; };
-		645EECDA2417340C00205F38 /* PushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EECD92417340C00205F38 /* PushController.m */; };
+		645EECDA2417340C00205F38 /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645EECD92417340C00205F38 /* RegisterController.m */; };
 		645EECDC241738BD00205F38 /* meteor.png in Resources */ = {isa = PBXBuildFile; fileRef = 645EECDB241738BD00205F38 /* meteor.png */; };
 		645EECDE24174C9A00205F38 /* word.png in Resources */ = {isa = PBXBuildFile; fileRef = 645EECDD24174C9A00205F38 /* word.png */; };
 		645EECE12417674600205F38 /* libOscarLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 645EECE02417674600205F38 /* libOscarLib.a */; };
@@ -53,8 +53,8 @@
 		645EECB724120FCC00205F38 /* oscarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oscarIcon.png; sourceTree = "<group>"; };
 		645EECB824120FCC00205F38 /* pushIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushIcon.png; sourceTree = "<group>"; };
 		645EECB924120FCD00205F38 /* qrIcom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrIcom.png; sourceTree = "<group>"; };
-		645EECD82417340C00205F38 /* PushController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushController.h; sourceTree = "<group>"; };
-		645EECD92417340C00205F38 /* PushController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushController.m; sourceTree = "<group>"; };
+		645EECD82417340C00205F38 /* RegisterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterController.h; sourceTree = "<group>"; };
+		645EECD92417340C00205F38 /* RegisterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterController.m; sourceTree = "<group>"; };
 		645EECDB241738BD00205F38 /* meteor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteor.png; sourceTree = "<group>"; };
 		645EECDD24174C9A00205F38 /* word.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = word.png; sourceTree = "<group>"; };
 		645EECE02417674600205F38 /* libOscarLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOscarLib.a; path = lib/libOscarLib.a; sourceTree = "<group>"; };
@@ -110,8 +110,8 @@
 				64320CE323FCF9A200F19A9C /* SceneDelegate.m */,
 				64320CE523FCF9A200F19A9C /* OscarMainController.h */,
 				64320CE623FCF9A200F19A9C /* OscarMainController.m */,
-				645EECD82417340C00205F38 /* PushController.h */,
-				645EECD92417340C00205F38 /* PushController.m */,
+				645EECD82417340C00205F38 /* RegisterController.h */,
+				645EECD92417340C00205F38 /* RegisterController.m */,
 				64320CE823FCF9A200F19A9C /* Main.storyboard */,
 				64320CED23FCF9A200F19A9C /* LaunchScreen.storyboard */,
 				6423285A241F44E500D0E3E3 /* oscar_face.png */,
@@ -285,7 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64320CE723FCF9A200F19A9C /* OscarMainController.m in Sources */,
-				645EECDA2417340C00205F38 /* PushController.m in Sources */,
+				645EECDA2417340C00205F38 /* RegisterController.m in Sources */,
 				64320CE123FCF9A200F19A9C /* APNSDelegate.m in Sources */,
 				6466C2862418D2B900A4A89A /* AuntenticateController.m in Sources */,
 				64320CF223FCF9A200F19A9C /* main.m in Sources */,

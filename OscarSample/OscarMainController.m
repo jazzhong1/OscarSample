@@ -7,7 +7,7 @@
 //
 
 #import "OscarMainController.h"
-#import "PushController.h"
+#import "RegisterController.h"
 #import "OscarLib.h"
 
 @interface OscarMainController ()
@@ -18,7 +18,7 @@
 @end
 
 @implementation OscarMainController{
-    PushController *add;
+    RegisterController *add;
 }
 
 - (void)viewDidLoad {
@@ -48,11 +48,11 @@
     NSLog(@"tapView%@", tap.view);
     //callback 함수로 받기
     
-    add = [[PushController alloc]init];
+    add = [[RegisterController alloc]init];
     [add setFcmToken:[[NSUserDefaults standardUserDefaults]valueForKey:@"fcmToken"]];
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
                                                          bundle:nil];
-    add =[storyboard instantiateViewControllerWithIdentifier:@"pushController"];
+    add =[storyboard instantiateViewControllerWithIdentifier:@"RegisterController"];
     [self presentViewController:add
                        animated:YES 
                      completion:nil];    
