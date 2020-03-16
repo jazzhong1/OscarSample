@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6423285B241F44E500D0E3E3 /* oscar_face.png in Resources */ = {isa = PBXBuildFile; fileRef = 6423285A241F44E500D0E3E3 /* oscar_face.png */; };
 		64320CE123FCF9A200F19A9C /* APNSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64320CE023FCF9A200F19A9C /* APNSDelegate.m */; };
 		64320CE423FCF9A200F19A9C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64320CE323FCF9A200F19A9C /* SceneDelegate.m */; };
 		64320CE723FCF9A200F19A9C /* OscarMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64320CE623FCF9A200F19A9C /* OscarMainController.m */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		0B31DB01C2EED80389909E39 /* Pods_OscarSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OscarSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6423285A241F44E500D0E3E3 /* oscar_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = oscar_face.png; path = ../../Downloads/oscar_face.png; sourceTree = "<group>"; };
 		64320CDC23FCF9A200F19A9C /* OscarSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OscarSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64320CDF23FCF9A200F19A9C /* APNSDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APNSDelegate.h; sourceTree = "<group>"; };
 		64320CE023FCF9A200F19A9C /* APNSDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APNSDelegate.m; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				645EECD92417340C00205F38 /* PushController.m */,
 				64320CE823FCF9A200F19A9C /* Main.storyboard */,
 				64320CED23FCF9A200F19A9C /* LaunchScreen.storyboard */,
+				6423285A241F44E500D0E3E3 /* oscar_face.png */,
 				645EECB724120FCC00205F38 /* oscarIcon.png */,
 				645EECDD24174C9A00205F38 /* word.png */,
 				645EECB824120FCC00205F38 /* pushIcon.png */,
@@ -228,6 +231,7 @@
 				645EECAF2410DE7200205F38 /* GoogleService-Info.plist in Resources */,
 				64596C2E23FCFF3700237F49 /* Assets.xcassets in Resources */,
 				64320CEA23FCF9A200F19A9C /* Main.storyboard in Resources */,
+				6423285B241F44E500D0E3E3 /* oscar_face.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

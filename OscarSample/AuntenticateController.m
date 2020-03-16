@@ -40,7 +40,6 @@
                                               self.messageLabel.text = @"factor'로그인 실패";
                             self->_returnBtn.hidden=NO;
                                           });
-                        
                     }];
                 }else{
                     //sendfactor

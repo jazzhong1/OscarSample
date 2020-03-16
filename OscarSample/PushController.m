@@ -9,6 +9,8 @@
 #import "PushController.h"
 #import "AuntenticateController.h"
 #import "OscarLib.h"
+#import <LocalAuthentication/LocalAuthentication.h>
+
 
 #define MAX_LENGTH 1;
 
@@ -49,16 +51,27 @@
         
         [oscar testRun:@"http://172.16.10.14/oscar/reg_auth.jsp" withValue:value withToken:token
               callback:^(void){ //successCallback
-            NSLog(@"success");
-            dispatch_async(dispatch_get_main_queue(), ^{
-                AuntenticateController *auth = [[AuntenticateController alloc]init];
-                [auth setCheckLogin:YES];
-                auth= [storyboard instantiateViewControllerWithIdentifier:@"auth"];
-                [self presentViewController:auth
-                                   animated:YES
-                                 completion:nil];
-                [self clearTextFeld];
-            });
+            LAContext *context = [[LAContext alloc]init];
+            NSError *error;
+            if([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]){
+                [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"지문을 입력해주세요" reply:^(BOOL success, NSError *error){
+                    if(success){
+                        NSLog(@"@@@@성공"); // 지문 인증 성공했을때
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self showAlert:@"Oscar" withMessage:@"등록이 완료 되었습니다."];
+                            [self clearTextFeld];
+                        });
+                    }else{
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self showAlert:@"Oscar" withMessage:@"생체정보가 일치하지 않습니다."];
+                            [self clearTextFeld];
+                        });
+                    }
+                }];
+            }else{
+                NSLog(@"Touch 지원하지 않음");
+            }
+            
         }
               callback:^(NSInteger code,NSDictionary *info){ //errorCallback
             NSLog(@"Error :: %ld = %@",(long)code,info);
